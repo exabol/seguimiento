@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block titulo %} ilcs {% endblock %}
+
+{% block contenido %}
+
+<div class="card">
+    <div class="card-header">
+       <a name="" id="" class="btn btn-success" href="{% url 'crear' %}" role="button">AÑADIR ILC</a>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title"> ILC </h4>
+         <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>logo</th>
+                    <th>ILC</th>
+                    <th>Nacion</th>
+                    <th>Idioma</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ilcs in ilcs %}
+                <tr>          
+                    <td>{{ ilcs.id }}</td>
+                    <td>
+                        <img src="{{ ilcs.imagen.url }}" height="100" />
+                    </td>
+                    <td>{{ ilcs.ilc }}</td>
+                    <td>{{ ilcs.nacion }}</td>
+                    <td>{{ ilcs.idioma }}</td>
+                    <td>Activo</td>
+                    <td>
+                        <a name="" id="" class="btn btn-primary" href="{% url 'editar' %}" role="button">Editar</a>
+                        <a name="" id="" class="btn btn-danger" href="{% url 'editar' %}" role="button">Borrar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+         </table>
+         
+    </div>
+    <div class="card-footer text-muted">
+        Footer
+    </div>
+</div>
+{% endblock%}
