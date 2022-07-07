@@ -101,12 +101,12 @@ WSGI_APPLICATION = 'sistema.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'exa',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
-        'PORT': 8889
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'seguimiento_db',
+        'USER': 'ademar',
+        'PASSWORD': '6614236',
+        'HOST': '127.0.0.1',
+        'PORT': 5432
     }
 }
 
